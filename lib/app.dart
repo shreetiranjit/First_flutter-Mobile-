@@ -1,4 +1,6 @@
+import 'package:first_flutter_application/view/area_of_circle.dart';
 import 'package:first_flutter_application/view/arithmetic_screen.dart';
+import 'package:first_flutter_application/view/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -7,14 +9,13 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Simple Interest"),
-          centerTitle: true,
-          elevation: 0,
-        ),
-        body: const SimpleInterestView(),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Dashboard(),
+        '/simpleinterest': (context) => const SimpleInterestView(),
+        '/areaofcircle': (context) => const AreaOfCircleView(),
+      },
     );
   }
 }

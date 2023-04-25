@@ -19,95 +19,124 @@ class _SimpleInterestViewState extends State<SimpleInterestView> {
   SimpleInterest si = SimpleInterest();
 
   void simpleLogic() {
-    setState(() {
-      var result = si.si(principle, rate, time);
-    });
+    setState(
+      () {
+        result = si.si(principle, rate, time);
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          gap,
-          TextFormField(
-            onChanged: (value) {
-              principle = double.parse(value);
-            },
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              labelText: 'Enter Principle',
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Simple Interest"),
+        centerTitle: true,
+        elevation: 0,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                gap,
+                TextFormField(
+                  onChanged: (value) {
+                    principle = double.parse(value);
+                  },
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Enter Principle',
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.white,
+                gap,
+                TextFormField(
+                  onChanged: (value) {
+                    rate = double.parse(value);
+                  },
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Enter Rate',
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                gap,
+                TextFormField(
+                  onChanged: (value) {
+                    time = double.parse(value);
+                  },
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Enter Time',
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ),
+                ),
+                gap,
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      simpleLogic();
+                    },
+                    child: const Text(" Calculate "),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text("Result :  $result"),
+              ],
             ),
           ),
-          gap,
-          TextFormField(
-            onChanged: (value) {
-              rate = double.parse(value);
-            },
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              labelText: 'Enter Rate',
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12),
-                ),
-              ),
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-          gap,
-          TextFormField(
-            onChanged: (value) {
-              time = double.parse(value);
-            },
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              labelText: 'Enter Time',
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12),
-                ),
-              ),
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-          gap,
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                simpleLogic();
-              },
-              child: const Text(" Calculate "),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text("Result : $result"),
-        ],
+        ),
       ),
     );
   }
