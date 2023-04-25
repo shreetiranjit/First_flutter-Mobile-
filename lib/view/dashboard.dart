@@ -39,6 +39,15 @@ class Dashboard extends StatelessWidget {
               ),
               child: const Text("Area of Circle"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/change');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("Change Name"),
+            ),
           ],
         ),
       ),
