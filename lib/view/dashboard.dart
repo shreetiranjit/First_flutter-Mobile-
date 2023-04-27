@@ -48,6 +48,24 @@ class Dashboard extends StatelessWidget {
               ),
               child: const Text("Change Name"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/richtextview');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("Rich Text"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/columnview');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("Column View"),
+            ),
           ],
         ),
       ),

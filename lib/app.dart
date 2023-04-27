@@ -1,7 +1,9 @@
 import 'package:first_flutter_application/view/area_of_circle.dart';
 import 'package:first_flutter_application/view/arithmetic_screen.dart';
 import 'package:first_flutter_application/view/changename.dart';
+import 'package:first_flutter_application/view/column_view.dart';
 import 'package:first_flutter_application/view/dashboard.dart';
+import 'package:first_flutter_application/view/rich_text_view.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -17,6 +19,8 @@ class App extends StatelessWidget {
         '/simpleinterest': (context) => const SimpleInterestView(),
         '/areaofcircle': (context) => const AreaOfCircleView(),
         '/change': (context) => const ChangeNameLoopView(),
+        '/richtextview': (context) => const RichTextView(),
+        '/columnview': (context) => const ColumnView(),
       },
     );
   }
