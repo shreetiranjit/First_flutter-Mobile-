@@ -66,6 +66,42 @@ class Dashboard extends StatelessWidget {
               ),
               child: const Text("Column View"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/bmi');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("BMI"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/reverse');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("Reverse a string"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/secondhighest');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("Second highest"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/binarysearch');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("Binary Search"),
+            ),
           ],
         ),
       ),
