@@ -5,9 +5,11 @@ import 'package:first_flutter_application/view/bmi.dart';
 import 'package:first_flutter_application/view/changename.dart';
 import 'package:first_flutter_application/view/column_view.dart';
 import 'package:first_flutter_application/view/dashboard.dart';
+import 'package:first_flutter_application/view/output_view.dart';
 import 'package:first_flutter_application/view/reversestring.dart';
 import 'package:first_flutter_application/view/rich_text_view.dart';
 import 'package:first_flutter_application/view/secondhighest.dart';
+import 'package:first_flutter_application/view/students.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -29,6 +31,8 @@ class App extends StatelessWidget {
         '/reverse': (context) => const ReverseStringPage(),
         '/secondhighest': (context) => const SecondHighestPage(),
         '/binarysearch': (context) => const BinarySearchPage(),
+        '/outputview': (context) => const OutputView(),
+        '/students': (context) => const StudentsInfo(),
       },
     );
   }

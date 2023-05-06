@@ -15,6 +15,15 @@ class Dashboard extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/students');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 30),
+              ),
+              child: const Text("Students"),
+            ),
+            ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 30),
